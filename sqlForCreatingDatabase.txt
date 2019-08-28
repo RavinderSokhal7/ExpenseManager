@@ -1,0 +1,47 @@
+CREATE DATABASE `expensemanager3` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+
+CREATE TABLE `users` (
+
+  `UID` varchar(30) NOT NULL,
+
+  `Password` varchar(45) NOT NULL,
+
+  PRIMARY KEY (`UID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `usersmonth` (
+
+  `UID` varchar(30) NOT NULL,
+
+  `Month` varchar(20) NOT NULL,
+
+  `Year` varchar(5) NOT NULL DEFAULT '2019',
+
+  `Expense` double NOT NULL DEFAULT '0',
+
+  `Income` double NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+CREATE TABLE `transactions` (
+
+  `UID` varchar(20) NOT NULL,
+
+  `Month` varchar(20) NOT NULL,
+
+  `Year` varchar(5) NOT NULL,
+
+  `Type` varchar(20) NOT NULL,
+
+  `Amount` double NOT NULL,
+
+  `Reason` varchar(45) NOT NULL,
+
+  `Description` varchar(45) DEFAULT NULL,
+
+  `Date` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
